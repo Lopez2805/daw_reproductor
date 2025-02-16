@@ -90,6 +90,7 @@ const getSoundsData = async () => {
         soundDataStore.soundName = soundsData.value[key].name;
         soundDataStore.soundImg = soundsData.value[key].images.spectral_m;
         soundDataStore.soundUrl = soundsData.value[key].previews["preview-hq-mp3"];
+        soundDataStore.addRecentSong(soundsData.value[key]);
     }
 
     const handleScroll = (event) => {

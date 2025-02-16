@@ -7,6 +7,14 @@ export const useSoundDataStore = defineStore('soundDataStore', () => {
     //https://cdn.freesound.org/previews/6/6465_2518-hq.mp3
     const soundUrl = ref('')
     const soundImg = ref('');
+    const recentSongs = ref([]);
+
+    const addRecentSong = (song) => {
+        recentSongs.value.unshift(song);
+        if (recentSongs.value.length > 5) {
+            recentSongs.value.pop();
+        }
+    };
 
     const resetSound = () => {
         soundName.value = '';
@@ -14,5 +22,5 @@ export const useSoundDataStore = defineStore('soundDataStore', () => {
         soundUrl.value = '';
     }
 
-    return { soundUrl, soundName, soundImg, resetSound }
+    return { soundUrl, soundName, soundImg, recentSongs, addRecentSong, resetSound }
 })

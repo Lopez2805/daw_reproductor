@@ -8,7 +8,7 @@
                     <i class="bi bi-search"></i>
                 </div>
                 <nav>
-
+                    <RecentSongsSidebar /> 
                 </nav>
             </div>
             <div class="data-container">
@@ -49,6 +49,7 @@
     import { useTemplateRef, ref, onMounted, watch } from 'vue';
     import { useSoundDataStore } from '../stores/soundData';
     import { useSearchStore } from '@/stores/search';
+    import RecentSongsSidebar from '@/components/RecentSongsSidebar.vue';
 
     const searchDataStore = useSearchStore();
     const soundDataStore = useSoundDataStore();
